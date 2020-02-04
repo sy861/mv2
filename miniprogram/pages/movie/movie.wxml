@@ -1,0 +1,20 @@
+<!--pages/movie/movie.wxml-->
+<view class="movie" wx:for="{{movieList}}" wx:key="{{index}}" bindtap="togoComment" data-movieid="{{item.id}}">
+  <image class="movie-img" src="{{item.images.small}}"></image>
+  <view class="movie-info">
+    <view><text class="movie-title">{{item.title}}</text></view>
+    <view>
+      <text class="label">类型：</text>
+      <text class="movie-type" wx:for="{{item.genres}}" wx:key="{{index}}">{{item}} </text>
+    </view>
+    <view>
+      <text class="label">评分：</text>
+      <text class="movie-rate">{{item.rating.average == 0?'暂无评分':item.rating.average}}</text>
+    </view>
+    <view>
+      <text class="label">主演：</text>
+      <text class="movie-role"><text wx:for="{{item.casts}}" wx:key="{{index}}">{{item.name}} </text></text>
+    </view>
+    <view><text class="label">年份：</text><text class="movie-year">{{item.year}}</text></view>
+  </view>
+</view>

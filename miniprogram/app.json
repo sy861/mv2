@@ -1,0 +1,33 @@
+{
+  "pages": [
+    "pages/movie/movie",
+    "pages/my/my",
+    "pages/comment/comment"
+  ],
+  "window": {
+    "backgroundColor": "#1296db",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#1296db",
+    "navigationBarTitleText": "最新电影",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#c2c5cc",
+    "selectedColor": "#1296db",
+    "list": [
+      {
+        "pagePath": "pages/movie/movie",
+        "text": "电影",
+        "iconPath": "images/test.png",
+        "selectedIconPath": "images/test-active.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "images/my.png",
+        "selectedIconPath": "images/my-active.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

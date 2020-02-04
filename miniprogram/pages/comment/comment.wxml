@@ -1,0 +1,41 @@
+<!--pages/comment/comment.wxml-->
+<view>
+<view class="detail-bg" style="background:url({{detail.images.medium}}) no-repeat top/cover"></view>
+<view class="detail-mask"></view>
+<view class="detail-info">
+  <image class="detail-img" src="{{detail.images.medium}}"></image>
+  <view class="detail">
+    <view class="detail-title">{{detail.title}}</view>
+    <view class="detail-rate">{{detail.rating.average}}</view>
+    <view class="detail-countries" wx:for="{{detail.countries}}" wx:key="{{index}}">{{item}}/ </view>
+    <view>导演：<text wx:for="{{detail.directors}}" wx:key="{{index}}">{{item.name}}/ </text></view>
+  </view>
+</view>
+<view class="detail-summary">{{detail.summary}}</view>
+<view class="detail-comment">
+  <van-field
+      value="{{ comment }}"
+      type="textarea"
+      placeholder="快来写下你的感受吧~"
+      autosize
+      border="{{ false }}"
+      bind:change="onCommentChange"
+    />
+   </view>
+  <view class="detail-comment">
+    <van-rate value="{{ score }}" bind:change="onScoreChange" />
+  </view>
+  <view class="detail-comment">
+    <van-button size="small" type="info" bindtap="uploadImg">上传图片</van-button>
+  </view>
+  <view class="detail-comment" wx:if="{{images.length != 0}}">
+    <van-grid column-num="3" border="{{ false }}">
+    <van-grid-item use-slot wx:for="{{ images }}" wx:for-item="index" wx:key="{{index}}">
+      <image style="width: 100%; height: 90px;" src="{{images[index]}}"/>
+    </van-grid-item>
+    </van-grid>
+  </view>
+  <view class="detail-comment">
+    <van-button size="large" type="info" bindtap="submit">发布</van-button>
+  </view>
+</view>

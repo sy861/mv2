@@ -1,0 +1,40 @@
+/* pages/movie/movie.wxss */
+.movie{
+  height: 220rpx;
+  display: flex;
+  padding: 16px;
+  border-bottom: 1px solid #ccc;
+}
+
+.movie-img{
+  width:170rpx;
+  height: 100%;
+  margin-right: 10px;
+  flex:2;
+}
+
+.movie-info{
+  flex:5;
+}
+
+.movie-title{
+  font-size:36rpx;
+  font-weight: bold; 
+  text-overflow: ellipsis;
+}
+
+.movie-rate{
+  color:#f3cf2a;
+  font-size: 34rpx;
+}
+/* .movie-role{
+  width:496rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+} */
+
+.label{
+  font-size: 32rpx;
+  color:gray;
+}
